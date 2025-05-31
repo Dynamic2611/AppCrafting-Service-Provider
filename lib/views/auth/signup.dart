@@ -145,9 +145,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   onPressed: () async {
                     await authController.register(
-                      emailController.text.trim(),
-                      passwordController.text.trim(),
-                      selectedRole,
+                      context: context,          // NEW
+                      email: emailController.text.trim(),
+                      password: passwordController.text.trim(),
+                      role: selectedRole,
                     );
                   },
                   child: const Text(
